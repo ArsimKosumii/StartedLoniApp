@@ -13,6 +13,9 @@ export default function Pokemon({ pokemon, index }: any) {
         name: "Details",
         params: {
           id: pokemon?.url?.substring(34, pokemon?.url?.length - 1),
+          index,
+          name: fixName(pokemon?.name),
+          skills: ["Grass", "Poison"],
         },
       })
     );
