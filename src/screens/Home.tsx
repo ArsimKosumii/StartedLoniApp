@@ -1,5 +1,6 @@
 import React from "react";
 import { ActivityIndicator, FlatList, View } from "react-native";
+import Header from "../components/Header/Header";
 import NoData from "../components/NoData";
 import Pokemon from "../components/Pokemon/Pokemon";
 import { useGetAllPokemonsQuery } from "../redux/features/pokemons/pokemons";
@@ -19,16 +20,15 @@ export default function Home() {
         <ActivityIndicator size={"large"} />
       ) : (
         <View style={styles.content}>
+          <Header />
           <FlatList
             numColumns={numberOfColumns}
-            style={{ flex: 1, width: "100%" }}
-            contentContainerStyle={{
-              alignItems: "center",
-            }}
+            style={{ flex: 1 }}
             data={data?.results}
             renderItem={({ item, index }) => (
               <Pokemon pokemon={item} index={index} />
             )}
+            showsVerticalScrollIndicator={false}
           />
         </View>
       )}

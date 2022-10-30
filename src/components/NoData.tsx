@@ -4,7 +4,7 @@ import styles from "../styles/styles";
 export default function NoData() {
   return (
     <View style={styles.container}>
-      <Text>No Data Found</Text>
+      <Text style={{ fontFamily: "FlexoDemi" }}>No Data Found</Text>
     </View>
   );
 }
